@@ -9,11 +9,13 @@ export const AddCategory = ( { setCategories } ) => {
     const handleInputChange = ( e ) => {
         setInputValue( e.target.value )
         // console.log(e.target.value)
+        console.log('handleInputChange llamado');
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('hecho')
+        console.log('handleSubmit llamado', inputValue)
+
         // cats es el estado anterior
         if ( inputValue.trim().length > 2 ) {
             setCategories( cats => [inputValue, ...cats] );

@@ -2,4 +2,15 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom/extend-expect';
+//import '@testing-library/jest-dom/extend-expect';
+
+//los 3 son de enzyme 1
+import Enzyme from 'enzyme'; //1
+import Adapter from 'enzyme-adapter-react-16'; //1
+import {createSerializer} from 'enzyme-to-json'; //2
+//import '@testing-library/jest-dom/extend-expect';
+
+
+//enzyme-to-json de 2
+Enzyme.configure({ adapter: new Adapter() }); //1
+expect.addSnapshotSerializer(createSerializer({mode: 'deep'})); //2
